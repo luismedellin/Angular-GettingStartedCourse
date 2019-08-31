@@ -12,12 +12,6 @@ export class ProductListComponent implements OnInit {
     imageMargin: number = 2;
     showImage: boolean = false;
     _listFilter: string;
-
-    constructor() {
-        this.filteredProducts = this.products;
-        this.listFilter = 'Car';
-    }
-
     get listFilter(): string {
         return this._listFilter;
     }
@@ -26,6 +20,7 @@ export class ProductListComponent implements OnInit {
         this.filteredProducts = this._listFilter ? this.performFilter(this.listFilter) : this.products;
     }
     filteredProducts: IProduct[];
+
     products: IProduct[] = [
         {
             "productId": 2,
@@ -55,6 +50,15 @@ export class ProductListComponent implements OnInit {
 
     ngOnInit(): void {
         console.log("Init");
+    }
+
+    constructor() {
+        this.filteredProducts = this.products;
+        this.listFilter = 'Car';
+    }
+
+    onRatingClicked(message: string): void {
+        this.pageTitle = 'Product List: ' + message;
     }
 
     performFilter(filterBy: string): IProduct[] {
