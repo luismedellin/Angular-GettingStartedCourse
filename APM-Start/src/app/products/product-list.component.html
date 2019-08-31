@@ -1,3 +1,11 @@
+<header>
+<nav>otro</nav>
+</header>    
+
+<ul>
+    <li><a href="#" class="example">Link</a></li>
+</ul>
+
 <div class="card">
     <div class="card-header">
         {{pageTitle}}
@@ -32,7 +40,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor='let product of products'>
+                    <tr *ngFor='let product of filteredProducts'>
                         <td>
                             <img *ngIf='showImage' 
                                 [src]='product.imageUrl'
@@ -41,8 +49,8 @@
                                 [style.margin.px]='imageMargin'
                                 />
                         </td>
-                        <td>{{ product.productName | lowercase }}</td>
-                        <td>{{ product.productCode }}</td>
+                        <td>{{ product.productName }}</td>
+                        <td>{{ product.productCode | lowercase | convertToSpaces: '-' }}</td>
                         <td>{{ product.releaseDate }}</td>
                         <td>{{ product.price | currency:'USD':'symbol':'1.2-2' }}</td>
                         <td>{{ product.starRating }}</td>
