@@ -20,7 +20,11 @@ CommonModule:
 -ngIf
 
 FormsModule:
-NgModule
+NgModule:
+    -Bootstrap: Startup components
+    Export:
+    Imports
+    Providers: service providers 
 two-way binding
 
 
@@ -31,3 +35,10 @@ reuse module.
 
 --------------------------------------
 ng g m shared/shared --flat -m products/product.module
+
+--------------------------------------
+
+AppModule is the oschester.
+
+--------------------------------------
+Root aplication has a AppModule
