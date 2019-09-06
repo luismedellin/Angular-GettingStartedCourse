@@ -1,0 +1,33 @@
+
+npm start
+
+New module:
+ng g m products/product --flat -m app
+--------------------------------------
+ng: angular cli
+g: generate
+m: module
+products/product:module path/name
+--flat: no folder
+-m: import in moduleapp.module
+--------------------------------------
+CREATE src/app/products/product.module.ts (193 bytes)
+UPDATE src/app/app.module.ts (1489 bytes)
+--------------------------------------
+
+CommonModule: 
+-ngFor
+-ngIf
+
+FormsModule:
+NgModule
+two-way binding
+
+
+SharedModule:
+reuse module.
+-shared pieces
+
+
+--------------------------------------
+ng g m shared/shared --flat -m products/product.module
